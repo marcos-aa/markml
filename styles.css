@@ -1,0 +1,47 @@
+:root {
+    --field-width: 450px
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    max-width: 100%;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Manrope', sans-serif;
+    padding: 10px;
+}
+
+body > h1, main {
+    width: 700px;
+    margin: 10px auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+div > * {
+    margin-bottom: 20px;
+}
+
+.main-item {
+    height: 400px;
+    max-height: 100%;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+textarea {
+    outline: none;
+    background: none;
+    border: 1px solid black;
+    resize: vertical;
+    padding: 10px;
+}
