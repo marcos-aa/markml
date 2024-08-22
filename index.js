@@ -1,4 +1,11 @@
+let timeout_id = null
+
+function debounce(fn, delay) {
+  clearTimeout(timeout_id);
+  timeout_id = setTimeout(fn, delay);
+}
 function markdown_to_html() {
+  console.log('called')
   const markdown = document.getElementById("mkd-field").value;
   const matches = {
     "header": /^(#{1,6})\s*(.*)/gm,
@@ -36,5 +43,5 @@ function markdown_to_html() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const mkd = document.querySelector("#mkd-field");
-  mkd.addEventListener('input', markdown_to_html)
+  mkd.addEventListener('input', () => debounce(markdown_to_html, 350));
 });
